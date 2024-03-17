@@ -27,6 +27,17 @@ class UserResource extends Resource
 
     protected static ?string $slug = 'Users';
 
+    // badge on the navbar
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return static::getModel()::count() > 2 ? 'info' : 'warning';
+    }
+
     public static function form(Form $form): Form
     {
         return $form

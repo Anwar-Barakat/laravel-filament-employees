@@ -29,6 +29,17 @@ class DepartmentResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    // badge on the navbar
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeColor(): string|array|null
+    {
+        return static::getModel()::count() > 2 ? 'info' : 'warning';
+    }
+
     public static function form(Form $form): Form
     {
         return $form

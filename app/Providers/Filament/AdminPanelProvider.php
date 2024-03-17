@@ -36,6 +36,11 @@ class AdminPanelProvider extends PanelProvider
                 'success' => Color::Green,
                 'warning' => Color::Amber,
             ])
+            ->navigationGroups([
+                'Employee Management',
+                'System Management',
+                'User Management',
+            ])
             ->font('Inter')
             ->brandName('Edcare')
             ->brandLogo(asset('images/logo.png'))
